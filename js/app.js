@@ -12,6 +12,10 @@ var button6 = document.getElementById("button6");
 var button7 = document.getElementById("button7");
 var button8 = document.getElementById("button8");
 
+var reset = document.getElementById("reset");
+var allButtons = [button0,button1,button2,button3,button4,button5,button6,button7,button8];
+
+// var blue = document.getElementById("blueDot")
 
 button0.addEventListener("click", function clickBox() {
   if(player1 == true){
@@ -112,9 +116,8 @@ button8.addEventListener("click", function clickBox() {
   }
 winner();
 });
-
-// //  // add the reset function here inside this fctn
-
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 // function winner() {
 //     if (xIsWinner) {
 //       alert("player X wins");
@@ -180,17 +183,33 @@ winner();
 //     return oWinsDiagonal2;
 //   }
 // }
-// function winner() {
-//     if (xWinsDiagonal1 || xWinsDiagonal2 ) {
-//       alert("player X wins");
-//     }
-//     else if (oWinsDiagonal1 || oWinsDiagonal2 ) {
-//        alert("player O wins");
-//     } 
-//       else {
-//         alert("no winner");
-//       }
-// }
+
+var winnerList= [[button0,button1,button2],
+                 [button3,button4,button5],
+                 [button6,button7,button8],
+                 [button0,button3,button6],
+                 [button1,button4,button7],
+                 [button2,button5,button8],
+                 [button0,button4,button8],
+                 [button2,button4,button6]];
+
+var x = "X";
+var o = "o";
+
+
+function winner(){ 
+
+if((
+  (winnerList[0]) || (winnerList[1]) || (winnerList[2])||(winnerList[3])
+  (winnerList[4]) || (winnerList[5]) || (winnerList[6])||(winnerList[7]) || (winnerList[8])) == x ) {
+    console.log("winner is player X");
+  } else 
+   {
+
+    console.log("winner is player o");
+  }
+};
+
 
 
 
@@ -210,31 +229,26 @@ winner();
 /////////////////////////////////////////////////////////////////////////
  /////////////////////////////////////////////////////////////////////////
  /////////////////////////////////////////////////////////////////////////
-//  
 
+// var winnerList= [[button0,button1,button2],
+//                  [button3,button4,button5],
+//                  [button6,button7,button8],
+//                  [button0,button3,button6],
+//                  [button1,button4,button7],
+//                  [button2,button5,button8],
+//                  [button0,button4,button8],
+//                  [button2,button4,button6]];
 
-//
-//
+// var x = "X";
+// var o = "o";
 
-var winnerList= [[button0,button1,button2],
-             [button3,button4,button5],
-             [button6,button7,button8],
-             [button0,button3,button6],
-             [button1,button4,button7],
-             [button2,button5,button8],
-             [button0,button4,button8],
-             [button2,button4,button6]];
-
-var x = "X";
-var o = "o";
-
-function winner(){ 
-  if(winnerList == x){
-    console.log("winner is player X");
-  } else  {
- console.log("winner is player X");
-  }
-};
+// function winner(){ 
+//   if(winnerList[0] == x ){
+//     console.log("winner is player X");
+//   } else  {
+//  console.log("winner is player o");
+//   }
+// };
 
  // function winner(){
  //  if((winnerList[0]=="X") || (winnerList[1]=="X") || (winnerList[2]=="X") || (winnerList[3]=="X") || (winnerList[4]=="X") || (winnerList[5]=="X") || (winnerList[6]=="X")  || (winnerList[7]=="X") || (winnerList[8]=="X")){
@@ -277,7 +291,37 @@ function winner(){
 //   }
 //  };
 
+reset.addEventListener("click",function clearGrid() {      
 
+  reset.addEventListener("click", function clearBox0(){
+    allButtons[0].innerHTML = " " ;
+  });
+  reset.addEventListener("click",function clearBox1(){
+    allButtons[1].innerHTML = " " ;
+  });
+  reset.addEventListener("click", function clearBox2(){
+    allButtons[2].innerHTML = " " ;
+  });
+  reset.addEventListener("click", function clearBox3(){
+    allButtons[3].innerHTML = " " ;
+  });
+  reset.addEventListener("click", function clearBox4(){
+    allButtons[4].innerHTML = " " ;
+  });
+  reset.addEventListener("click", function clearBox5(){
+    allButtons[5].innerHTML = " " ;
+  });
+  reset.addEventListener("click", function clearBox6(){
+    allButtons[6].innerHTML = " " ;
+  });
+  reset.addEventListener("click", function clearBox7(){
+    allButtons[7].innerHTML = " " ;
+  });
+  reset.addEventListener("click", function clearBox8(){
+    allButtons[8].innerHTML = " " ;
+  });
+
+});
 
 
 

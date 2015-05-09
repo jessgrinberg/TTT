@@ -70,15 +70,17 @@ input {
 }
 
 #dots{
-	/*text-align: center;*/
+    position: relative;
 	overflow:hidden;
 	display: inline-flex;
+	left: 525px;
+	text-align: center;
 }
 
 #redDot{
 	height: 75px;
 	width: 75px;
-	background-color: red;
+	background-color: #CF0000;
 	border-radius: 50%;
 	float: left;
 }
