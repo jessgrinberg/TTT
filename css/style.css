@@ -13,7 +13,7 @@ h2{
 	font-family: Didot;
 }
 
-input {
+h2 input {
 	height: 75px;
 	width: 75px;
 	border-radius: 50%;
@@ -30,6 +30,7 @@ input {
 	text-align: center;
 	font-style: italic;
 	font-weight: lighter;
+	/*color: #CF0000;*/
 }
 
 #tac{
@@ -45,6 +46,7 @@ input {
 	text-align: center;
 	font-style: italic;
 	font-weight: lighter;
+	/*color: #010163;*/
 }
 
 .grid{
@@ -100,3 +102,16 @@ input {
 	font-size: 16px;
 	font-family: Didot;
 }
+
+#score1{
+	/*float: left;*/
+	text-align: center;
+}
+#score2{
+	/*float: right;*/
+	text-align: center;
+}
+
+/*p input {
+	float: left;
+}*/

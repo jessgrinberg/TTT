@@ -17,25 +17,42 @@ var allButtons = [button0,button1,button2,button3,button4,button5,button6,button
 
 // var blue = document.getElementById("blueDot")
 
+// button1.onClick= new clickBox("return false");
+
+
 button0.addEventListener("click", function clickBox() {
   if(player1 == true){
+    // button0.style.backgroundColor = "#010163";
     button0.innerHTML="X";
     player1 = false;
   } else {
-    button0.innerHTML="o";
+    // button0.style.backgroundColor="#CF0000";
+    button0.innerHTML="o"; 
     player1 = true;
   }
   winner();
 });
 
+// button1.addEventListener("click", function clickBox() {
+//   if(player1 == true){
+//     button1.disabled= true; 
+//     player1= false;       
+//   } else {
+//     button1.disabled= true;   
+//     player1 = true;   
+//   }  
+//    winner();
+// });
+
+
 button1.addEventListener("click", function clickBox() {
   if(player1 == true){
-    button1.innerHTML="X";
+    button1.innerHTML="X"; 
     player1= false;       
   } else {
     button1.innerHTML="o";   
     player1 = true;   
-  }
+  }  
   winner();
 });
 
@@ -109,191 +126,54 @@ button7.addEventListener("click", function clickBox() {
 button8.addEventListener("click", function clickBox() {
   if(player1 == true){
     button8.innerHTML="X";
-    player1= false;       
+    player1= false; 
   } else {
-    button8.innerHTML="o";  
-    player1 = true;    
+    button8.innerHTML="o"; 
+    player1 = true;  
   }
 winner();
 });
-////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////
-// function winner() {
-//     if (xIsWinner) {
-//       alert("player X wins");
-//     }
-//     else if (oIsWinner) {
-//        alert("player O wins");
-//     } 
-//       else {
-//         alert("no winner");
-//       }
-/////////////////////////////////////////////////////////////////////////////////      
- //////////////////////////////////////////////////////////////////////////////////   
-///////////////////////////////////////////////////////////////////////////////////
-// function xIsWinner() {
-//   return xWinsRows || xWinsColumn || xWinsDiagonal;
-// }
 
-// function oIsWinner() {
-//   return oWinsRows || oWinsColumn || oWinsDiagonal;
-// }
-
-// function winsRows() {
-//   if (((button0==="X") && (button1==="X") && (button2==="X")) ||
-//      ((button3==="X") && (button4==="X") && (button5==="X")) ||
-//      ((button6==="X") && (button7==="X") && (button8==="X"))) {
-//       return xWinsRows;
-//     } else if (((button0==="X") && (button1==="X") && (button2==="X")) ||
-//      ((button3==="X") && (button4==="X") && (button5==="X")) ||
-//      ((button6==="X") && (button7==="X") && (button8==="X"))) {
-//       return oWinsRows;
-//     } else {
-//       return null;
-//     }
-// }
-
-// function winsColumn() {
-//   if (((button0==="X") && (button3==="X") && (button6==="X")) || 
-//      ((button1==="X") && (button4==="X") && (button7==="X")) ||
-//      ((button2==="X") && (button5==="X") && (button8==="X"))) {
-//      return xWinsDiagonal;
-//      }  else if (((button0==="o") && (button3==="o") && (button6==="o")) || 
-//      ((button1==="o") && (button4==="o") && (button7==="o")) ||
-//      ((button2==="o") && (button5==="X") && (button8==="o"))) {
-//      return oWinsDiagonal;
-//      } else {
-//       return null;
-//     }
-//   }
-// }
-// var xWinsDiagonal1;
-// var xWinsDiagonal2;
-// var oWinsDiagonal1;
-// var oWinsDiagonal2;
-
-// function winsDiagonal1(){
-//   if ((button0==="X") && (button4==="X") && (button8==="X")){
-//     return xWinsDiagonal1;
-//   } else if ((button2==="X") && (button4==="X") && (button6==="X")) {
-//     return xWinsDiagonal2;
-//   } else if ((button0==="o") && (button4==="o") && (button8==="o")) {
-//     return oWinsDiagonal1;
-//   } else if ((button2==="X") && (button4==="X") && (button6==="X")) { 
-//     return oWinsDiagonal2;
-//   }
-// }
-
-var winnerList= [[button0,button1,button2],
-                 [button3,button4,button5],
-                 [button6,button7,button8],
-                 [button0,button3,button6],
-                 [button1,button4,button7],
-                 [button2,button5,button8],
-                 [button0,button4,button8],
-                 [button2,button4,button6]];
-
-var x = "X";
-var o = "o";
-
-
-function winner(){ 
-
-if((
-  (winnerList[0]) || (winnerList[1]) || (winnerList[2])||(winnerList[3])
-  (winnerList[4]) || (winnerList[5]) || (winnerList[6])||(winnerList[7]) || (winnerList[8])) == x ) {
-    console.log("winner is player X");
-  } else 
-   {
-
-    console.log("winner is player o");
+        
+function winner() {
+ if(
+  ((button0.innerHTML=="X") && (button1.innerHTML=="X") && (button2.innerHTML=="X")) ||
+  ((button3.innerHTML=="X") && (button4.innerHTML=="X") && (button5.innerHTML=="X")) || 
+  ((button6.innerHTML=="X") && (button7.innerHTML=="X") && (button8.innerHTML=="X")) ||
+  ((button0.innerHTML=="X") && (button3.innerHTML=="X") && (button6.innerHTML=="X")) || 
+  ((button1.innerHTML=="X") && (button4.innerHTML=="X") && (button7.innerHTML=="X")) || 
+  ((button2.innerHTML=="X") && (button5.innerHTML=="X") && (button8.innerHTML=="X")) || 
+  ((button0.innerHTML=="X") && (button4.innerHTML=="X") && (button8.innerHTML=="X")) || 
+  ((button2.innerHTML=="X") && (button4.innerHTML=="X") && (button6.innerHTML=="X")) 
+   ) 
+  {
+         alert("winner is player X");
   }
-};
+  else if
+   (
+  ((button0.innerHTML=="o") && (button1.innerHTML=="o") && (button2.innerHTML=="o")) ||
+  ((button3.innerHTML=="o") && (button4.innerHTML=="o") && (button5.innerHTML=="o")) || 
+  ((button6.innerHTML=="o") && (button7.innerHTML=="o") && (button8.innerHTML=="o")) ||
+  ((button0.innerHTML=="o") && (button3.innerHTML=="o") && (button6.innerHTML=="o")) || 
+  ((button1.innerHTML=="o") && (button4.innerHTML=="o") && (button7.innerHTML=="o")) || 
+  ((button2.innerHTML=="o") && (button5.innerHTML=="o") && (button8.innerHTML=="o")) || 
+  ((button0.innerHTML=="o") && (button4.innerHTML=="o") && (button8.innerHTML=="o")) || 
+  ((button2.innerHTML=="o") && (button4.innerHTML=="o") && (button6.innerHTML=="o")) 
+   ) 
+{
+  alert("winner is player o");
+  }
+  else {
+    return null;
+  }
+ };
 
 
-
-
-// function winsDiagonal() {
-//   if (((button0==="X") && (button4==="X") && (button8==="X")) || 
-//      ((button2==="X") && (button4==="X") && (button6==="X"))) {
-//     return xWinsDiagonal; 
-//   } else if (((button0==="o") && (button4==="o") && (button8==="o")) || 
-//             ((button2==="o") && (button4==="o") && (button6==="o"))) {
-//     return oWinsDiagonal;
-//   } else {
-//     return null;
-//   }
-// }
-// }
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
- /////////////////////////////////////////////////////////////////////////
- /////////////////////////////////////////////////////////////////////////
-
-// var winnerList= [[button0,button1,button2],
-//                  [button3,button4,button5],
-//                  [button6,button7,button8],
-//                  [button0,button3,button6],
-//                  [button1,button4,button7],
-//                  [button2,button5,button8],
-//                  [button0,button4,button8],
-//                  [button2,button4,button6]];
-
-// var x = "X";
-// var o = "o";
-
-// function winner(){ 
-//   if(winnerList[0] == x ){
-//     console.log("winner is player X");
-//   } else  {
-//  console.log("winner is player o");
-//   }
-// };
-
- // function winner(){
- //  if((winnerList[0]=="X") || (winnerList[1]=="X") || (winnerList[2]=="X") || (winnerList[3]=="X") || (winnerList[4]=="X") || (winnerList[5]=="X") || (winnerList[6]=="X")  || (winnerList[7]=="X") || (winnerList[8]=="X")){
- //    console.log("winner is player X");
- //  } else if ((winnerList[0]=="o") || (winnerList[1]=="o") || (winnerList[2]=="o") || (winnerList[3]=="o") || (winnerList[4]=="o") || (winnerList[5]=="o") || (winnerList[6]=="o")  || (winnerList[7]=="o") || (winnerList[8]=="o")){
- //    console.log("winner is player X");
- //  }
- //  else {
- //    return null;
- //  }
- // };          
-
-// function winner() {
-//  if(
-//   ((button0==="X") && (button1==="X") && (button2==="X")) ||
-//   ((button3==="X") && (button4==="X") && (button5==="X")) || 
-//   ((button6==="X") && (button7==="X") && (button8==="X")) ||
-//   ((button0==="X") && (button3==="X") && (button6==="X")) || 
-//   ((button1==="X") && (button4==="X") && (button7==="X")) || 
-//   ((button2==="X") && (button5==="X") && (button8==="X")) || 
-//   ((button0==="X") && (button4==="X") && (button8==="X")) || 
-//   ((button2==="X") && (button4==="X") && (button6==="X")) 
-//    ) 
-//   {
-//          console.log("winner is player X");
-//   }
-//   else
-  //  (
-  // ((button0==="o") && (button1==="o") && (button2==="o")) ||
-  // ((button3==="o") && (button4==="o") && (button5==="o")) || 
-  // ((button6==="o") && (button7==="o") && (button8==="o")) ||
-  // ((button0==="o") && (button3==="o") && (button6==="o")) || 
-  // ((button1==="o") && (button4==="o") && (button7==="o")) || 
-  // ((button2==="o") && (button5==="o") && (button8==="o")) || 
-  // ((button0==="o") && (button4==="o") && (button8==="o")) || 
-  // ((button2==="o") && (button4==="o") && (button6==="o")) 
-  //  ) 
-// {
-//   console.log("winner is player o");
-//   }
-//  };
 
 reset.addEventListener("click",function clearGrid() {      
 
   reset.addEventListener("click", function clearBox0(){
+    // allButtons[0].style.backgroundColor = null ;
     allButtons[0].innerHTML = " " ;
   });
   reset.addEventListener("click",function clearBox1(){
