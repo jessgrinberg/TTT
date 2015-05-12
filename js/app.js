@@ -17,6 +17,8 @@ var reset = document.getElementById("reset");
 
 var counter = 0;
 
+var win = false;
+
 for (var i=0; i<9 ; i++){
 
   console.log("button" +  i);
@@ -26,6 +28,10 @@ for (var i=0; i<9 ; i++){
   clickTarget.addEventListener("click", function clickBox(e) {
 
     var button = e.target
+
+    if(win){
+      return 
+    }
 
     if (button.innerHTML !=""){
 
@@ -52,7 +58,6 @@ for (var i=0; i<9 ; i++){
   });
 }
 
-        
 function winner() {
  if(
   ((button0.innerHTML=="X") && (button1.innerHTML=="X") && (button2.innerHTML=="X")) ||
@@ -66,6 +71,7 @@ function winner() {
    ) 
   {
   document.getElementById("displayResult").innerHTML="Player One Wins !";
+  win = true;
   
   }
   else if
@@ -81,6 +87,7 @@ function winner() {
    ) 
 {
   document.getElementById("displayResult").innerHTML="Player Two Wins !";
+  win = true;
   }
   
 
@@ -104,6 +111,7 @@ reset.addEventListener("click",function clearGrid() {
   counter=0;
   player1=true;
   player2=false;
+  win = false;
   document.getElementById("displayResult").innerHTML="Let's Play !";
 });
 
