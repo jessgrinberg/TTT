@@ -15,11 +15,12 @@ h3{
 	text-align: center;
 }
 
-h2 input {
+h2 button {
 	height: 75px;
 	width: 75px;
 	border-radius: 50%;
 	border-color: black;
+	background-color: white;
 }
 
 hr {
@@ -27,13 +28,10 @@ hr {
 	margin-left: 70px;
 	margin-right: 70px;
 	border-style: inset;
-
 }
 
 .scoreBox{
 	width: 50px;
-
-
 }
 
 /*header {
@@ -156,7 +154,6 @@ hr {
 	display: block;
 	font-size: 16px;
 	font-family: Didot;
-
 }
 
 #score1{
