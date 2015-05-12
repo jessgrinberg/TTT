@@ -13,8 +13,6 @@ var button8 = document.getElementById("button8");
 
 var reset = document.getElementById("reset");
 
-// var blue = document.getElementById("blueDot");
-
 var counter = 0;
 
 var win = false;
@@ -29,13 +27,14 @@ for (var i=0; i<9 ; i++){
 
     var button = e.target
 
-    if(win){
-      return 
+    if(win){ 
+      alert('To start a new game, hit reset!');
+      return
     }
 
     if (button.innerHTML !=""){
 
-      alert('this button has already been clicked');
+      alert('This button has already been clicked');
 
     } else {
 
